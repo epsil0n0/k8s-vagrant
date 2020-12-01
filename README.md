@@ -42,5 +42,3 @@ Then run this command:
 * For zero-downtime deployment or upgrade application in Kubernetes, we can use rolling update deployment strategy.
 
 
-Author
-Davoud salami
