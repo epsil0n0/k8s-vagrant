@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploy.name }}
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deploy.name }}
+    spec:
+      containers:
+      - name: {{ .Values.deploy.name }}
+        image: {{ .Values.deploy.image.repository }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.deploy.livenessProbe.httpGet.path }}
+            port: {{ .Values.deploy.livenessProbe.httpGet.port }}
+          initialDelaySeconds: {{ .Values.deploy.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.deploy.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.deploy.livenessProbe.timeoutSeconds}}
+          failureThreshold: {{ .Values.deploy.livenessProbe.failureThreshold }}
