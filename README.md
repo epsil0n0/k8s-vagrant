@@ -7,13 +7,13 @@ Use Kubeadm on Vagrant to create a multi-master environment for Kubernetes clust
 I use 2 master node and 3 worker node. one load balancer node is in front of 2 master node as follow: 
 
 
-                        Worker1
+				Worker1
                    
-           Master1 
-LB =====>               Worker2
-           Master2 
+		Master1 
+LB =====>			Worker2
+		Master2 
 
-                        Worker3
+				Worker3
 
 
 But in Best practice, almost use odd number  of master node or worker node. for example 1,3,5,... master or worker node.
